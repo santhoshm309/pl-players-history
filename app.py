@@ -11,12 +11,12 @@ app.app_context().push()
 ELEMENT_SUMMARY_URI="https://fantasy.premierleague.com/api/element-summary/"
 class Players(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('player_ids', type=int, action='append')
+    parser.add_argument('pid', type=int, action='append')
     def get(self):
         args=self.parser.parse_args()
         try:
             json_response={}
-            for element in args["player_ids"]:
+            for element in args["pid"]:
                 r=requests.get(ELEMENT_SUMMARY_URI+str(element)+"/")
                 if r.ok:
                     element_resp=r.json()
