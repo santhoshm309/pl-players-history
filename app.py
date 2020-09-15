@@ -16,6 +16,8 @@ class Players(Resource):
         args=self.parser.parse_args()
         try:
             json_response={}
+            if args is None or args["pid"] is None:
+                return make_response({"message":"No valid query params given", "statusCode":400},400)
             for element in args["pid"]:
                 r=requests.get(ELEMENT_SUMMARY_URI+str(element)+"/")
                 if r.ok:
@@ -23,12 +25,8 @@ class Players(Resource):
                     json_response[element]=element_resp["history"]
                 else:
                     return make_response({"message":"Fantasy IPL API error", "statusCode":500},500)
-
-            res=json.dumps(json_response)
-            response=Response(res,content_type='application/json')
-            response.headers.add('content-length',len(res))
-            response.status_code=200
-            return response
+            
+            return make_response(json_response,200)
         except ValueError:
             return make_response({"message":"Fantasy IPL API error", "statusCode":500},500)
 
