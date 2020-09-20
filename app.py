@@ -3,7 +3,7 @@ from flask_restful import Resource, reqparse, Api
 import requests
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="data", static_url_path='/static')
 api = Api(app)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 
