@@ -6,7 +6,7 @@ import json
 app = Flask(__name__, static_folder="data", static_url_path='/static')
 api = Api(app)
 app.config['PROPAGATE_EXCEPTIONS'] = True
-
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.app_context().push()
 ELEMENT_SUMMARY_URI="https://fantasy.premierleague.com/api/element-summary/"
 class Players(Resource):
