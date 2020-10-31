@@ -626,7 +626,7 @@
         "playerName": "JONNY",
         "playerId": 462,
         "amountBought": 3,
-        "trasfer": {
+        "transfer": {
           "out": 2
         }
       },
@@ -659,7 +659,7 @@
         "playerName": "HEATON",
         "playerId": 28,
         "amountBought": 0.2,
-        "trasfer": {
+        "transfer": {
           "out": 5
         }
       },
@@ -682,7 +682,7 @@
         "playerName": "CASTAGNE",
         "playerId": 498,
         "amountBought": 3,
-        "trasfer": {
+        "transfer": {
           "in": 3
         }
       },
@@ -690,7 +690,7 @@
         "playerName": "Semedo",
         "playerId": 546,
         "amountBought": 0.2,
-        "trasfer": {
+        "transfer": {
           "in": 6
         }
       }
